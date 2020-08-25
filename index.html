@@ -158,12 +158,12 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
@@ -198,6 +198,81 @@
 
         <div class="content index posts-expand">
           
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/25/QT-attached%E5%B1%9E%E6%80%A7%E4%B8%8E%E4%BF%A1%E5%8F%B7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZackHu">
+      <meta itemprop="description" content="一个乱糟糟的随笔博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZackHu's Boat">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/08/25/QT-attached%E5%B1%9E%E6%80%A7%E4%B8%8E%E4%BF%A1%E5%8F%B7/" class="post-title-link" itemprop="url">QT-attached属性与信号处理</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-08-25 13:24:06 / Modified: 13:27:12" itemprop="dateCreated datePublished" datetime="2020-08-25T13:24:06+08:00">2020-08-25</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>参考QT文档QML Object Attributes中的描述。</p>
+<h2 id="附加属性和附加信号处理的简介"><a href="#附加属性和附加信号处理的简介" class="headerlink" title="附加属性和附加信号处理的简介"></a>附加属性和附加信号处理的简介</h2><p><code>Attached Properties</code>（以下简称<code>附加属性</code>）<br><code>Attached Signal Handler</code>(以下简称<code>附加信号处理器</code>)</p>
+<p><strong>这是一种允许对象去使用那些原本无法使用的属性和信号处理器的机制。</strong></p>
+<p>一个QML功能的实现可能会构建用C++代码写的有附加属性和信号的类型，然后在程序运行中创建这个类型的对象，然后就可以使用这些附加属性和信号。在这些属性和信号处理器前加上附加类型的前缀就能使用，语法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;AttachingType&gt;.&lt;propertyName&gt;</span><br><span class="line">&lt;AttachingType&gt;.on&lt;SignalName&gt;</span><br></pre></td></tr></table></figure>
+
+<p>例如<code>ListView</code>有一个附加属性<code>ListView.isCurrentItem</code>，用来确认当前选择的是否是正在浏览的项目。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import QtQuick 2.0</span><br><span class="line"></span><br><span class="line">ListView &#123;</span><br><span class="line">    width: 240; height: 320</span><br><span class="line">    model: 3</span><br><span class="line">    delegate: Rectangle &#123;</span><br><span class="line">        width: 100; height: 30</span><br><span class="line">        color: ListView.isCurrentItem ? &quot;red&quot; : &quot;yellow&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>像这样，<code>AttachingType</code>就是<code>ListView</code>,<code>propertyName</code>就是<code>isCurrentItem</code>,组合起来附加属性就是<code>ListView.isCurrentItem</code>.</p>
+<h2 id="使用附加属性与附加信号处理的注意点"><a href="#使用附加属性与附加信号处理的注意点" class="headerlink" title="使用附加属性与附加信号处理的注意点"></a>使用附加属性与附加信号处理的注意点</h2><p>一个普遍的错误使用方法是假定了附加属性和信号处理器可以直接被对象的子对象和被附加的特性使用。<code>attached type</code>只和被指定的对象连接，并不是和这个对象的所有子对象。</p>
+<p>例如这个被稍微更改过的上文中的例子，在Rectangle外套了一个Item对象：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">import QtQuick 2.0</span><br><span class="line"></span><br><span class="line">ListView &#123;</span><br><span class="line">    width: 240; height: 320</span><br><span class="line">    model: 3</span><br><span class="line">    delegate: Item &#123;</span><br><span class="line">        width: 100; height: 30</span><br><span class="line"></span><br><span class="line">        Rectangle &#123;</span><br><span class="line">            width: 100; height: 30</span><br><span class="line">            color: ListView.isCurrentItem ? &quot;red&quot; : &quot;yellow&quot;    &#x2F;&#x2F; WRONG! This won&#39;t work.</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个例子展示了错误的用法。因为<code>ListView.isCurrentItem</code>只和根委托对象（root delegate object）相连，并不和它的子对象相连。因此应该像下面的代码这样调用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">ListView &#123;</span><br><span class="line">      &#x2F;&#x2F;....</span><br><span class="line">      delegate: Item &#123;</span><br><span class="line">          id: delegateItem</span><br><span class="line">          width: 100; height: 30</span><br><span class="line"></span><br><span class="line">          Rectangle &#123;</span><br><span class="line">              width: 100; height: 30</span><br><span class="line">              color: delegateItem.ListView.isCurrentItem ? &quot;red&quot; : &quot;yellow&quot;   &#x2F;&#x2F; correct</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Mark"><a href="#Mark" class="headerlink" title="Mark"></a>Mark</h2><p>关于attached properties 和signal handle说实话还是有点不懂。<br>不太清楚在什么情况下需要使用，官方还有文档详细介绍了如何定义、使用附加属性和信号处理，参考assistant中<em>“Defining QML Types from C++ “</em>中关于此的介绍。日后如果有用到会再写一篇介绍一下。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
