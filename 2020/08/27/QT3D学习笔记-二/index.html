@@ -22,17 +22,21 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"8.0.0-rc.5","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false};
   </script>
 
-  <meta name="description" content="一个乱糟糟的随笔博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ZackHu&#39;s Boat">
-<meta property="og:url" content="http://yoursite.com/tags/%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2/index.html">
+  <meta name="description" content="用户的输入与3D模型的互动所有的输入检测都是通过QObjectPicker。QObjectPicker的原理是跟踪图像射线的轨迹，检测出轨迹与物体的干涉（？？？）。算法和光线追踪相似，但是我们不需要知道被指向的物体的颜色、材质或者光线与其相交的点，我们只需要知道物体和射线相交了。 在QEntity中添加QObjectPicker就可以使用一些信号了。例如pressed(),released()和c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="QT3D学习笔记(二)">
+<meta property="og:url" content="http://yoursite.com/2020/08/27/QT3D%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E4%BA%8C/index.html">
 <meta property="og:site_name" content="ZackHu&#39;s Boat">
-<meta property="og:description" content="一个乱糟糟的随笔博客">
+<meta property="og:description" content="用户的输入与3D模型的互动所有的输入检测都是通过QObjectPicker。QObjectPicker的原理是跟踪图像射线的轨迹，检测出轨迹与物体的干涉（？？？）。算法和光线追踪相似，但是我们不需要知道被指向的物体的颜色、材质或者光线与其相交的点，我们只需要知道物体和射线相交了。 在QEntity中添加QObjectPicker就可以使用一些信号了。例如pressed(),released()和c">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-08-27T08:25:22.000Z">
+<meta property="article:modified_time" content="2020-08-27T08:26:36.254Z">
 <meta property="article:author" content="ZackHu">
+<meta property="article:tag" content="QML">
+<meta property="article:tag" content="QT3D">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/tags/%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2/">
+<link rel="canonical" href="http://yoursite.com/2020/08/27/QT3D%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E4%BA%8C/">
 
 
 <script class="page-configurations">
@@ -40,12 +44,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Tag: 测试博客 | ZackHu's Boat</title>
+  <title>QT3D学习笔记(二) | ZackHu's Boat</title>
   
 
 
@@ -134,7 +138,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -146,6 +150,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E7%9A%84%E8%BE%93%E5%85%A5%E4%B8%8E3D%E6%A8%A1%E5%9E%8B%E7%9A%84%E4%BA%92%E5%8A%A8"><span class="nav-number">1.</span> <span class="nav-text">用户的输入与3D模型的互动</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -196,71 +201,105 @@
       <div class="main-inner">
         
 
-        <div class="content tag">
+        <div class="content post posts-expand">
           
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">测试博客
-          <small>Tag</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/27/QT3D%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E4%BA%8C/">
 
-      
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZackHu">
+      <meta itemprop="description" content="一个乱糟糟的随笔博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZackHu's Boat">
+    </span>
+
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          QT3D学习笔记(二)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-08-27 16:25:22 / Modified: 16:26:36" itemprop="dateCreated datePublished" datetime="2020-08-27T16:25:22+08:00">2020-08-27</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="用户的输入与3D模型的互动"><a href="#用户的输入与3D模型的互动" class="headerlink" title="用户的输入与3D模型的互动"></a>用户的输入与3D模型的互动</h2><p>所有的输入检测都是通过<code>QObjectPicker</code>。<code>QObjectPicker</code>的原理是跟踪图像射线的轨迹，检测出轨迹与物体的干涉（<del>？？？</del>）。算法和光线追踪相似，但是我们不需要知道被指向的物体的颜色、材质或者光线与其相交的点，我们只需要知道物体和射线相交了。</p>
+<p>在<code>QEntity</code>中添加<code>QObjectPicker</code>就可以使用一些信号了。例如<code>pressed()</code>,<code>released()</code>和<code>clicked()</code>。对于一些拖拽的事件，确保<code>dragEnabled</code>的值为<code>true</code>，然后使用<code>moved()</code>信号。</p>
+<blockquote>
+<p>所有的信号都提供了一个QPickEvent对象，这个对象使用<code>position</code>（相对屏幕）或<code>localIntersection</code>（相对模型）或<code>worldIntersection</code>（相对世界）坐标系来描述（<del>不太理解是什么意思</del>）</p>
+</blockquote>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
+        
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-08-24T09:48:06+08:00"
-              content="2020-08-24">
-          08-24
-        </time>
-      </div>
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>ZackHu
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="http://yoursite.com/2020/08/27/QT3D%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E4%BA%8C/" title="QT3D学习笔记(二)">http://yoursite.com/2020/08/27/QT3D学习笔记-二/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/08/24/hello-world/" itemprop="url">
-            <span itemprop="name">测试更改markdown文件名替换已渲染文件</span>
-          </a>
-      </div>
 
-    </header>
-  </article>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/QML/" rel="tag"># QML</a>
+              <a href="/tags/QT3D/" rel="tag"># QT3D</a>
+          </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+        
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-08-22T17:48:06+08:00"
-              content="2020-08-22">
-          08-22
-        </time>
-      </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/08/22/%E6%B5%8B%E8%AF%95github%E4%BD%9C%E4%B8%BA%E5%9B%BE%E5%BA%8A/" itemprop="url">
-            <span itemprop="name">测试github作为图床</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/08/27/QT3D%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/" rel="prev" title="QT3D学习笔记">
+      <i class="fa fa-chevron-left"></i> QT3D学习笔记
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/08/27/QT3D%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E4%B8%89/" rel="next" title="QT3D学习笔记(三)">
+      QT3D学习笔记(三) <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
-  </div>
+      </footer>
+    
+  </article>
   
   
-  
-
   
 
 

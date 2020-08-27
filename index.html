@@ -158,12 +158,12 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
@@ -198,6 +198,206 @@
 
         <div class="content index posts-expand">
           
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/27/QT3D%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E4%B8%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZackHu">
+      <meta itemprop="description" content="一个乱糟糟的随笔博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZackHu's Boat">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/08/27/QT3D%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E4%B8%89/" class="post-title-link" itemprop="url">QT3D学习笔记(三)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-08-27 16:26:01 / Modified: 16:26:55" itemprop="dateCreated datePublished" datetime="2020-08-27T16:26:01+08:00">2020-08-27</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/27/QT3D%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E4%BA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZackHu">
+      <meta itemprop="description" content="一个乱糟糟的随笔博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZackHu's Boat">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/08/27/QT3D%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E4%BA%8C/" class="post-title-link" itemprop="url">QT3D学习笔记(二)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-08-27 16:25:22 / Modified: 16:26:36" itemprop="dateCreated datePublished" datetime="2020-08-27T16:25:22+08:00">2020-08-27</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="用户的输入与3D模型的互动"><a href="#用户的输入与3D模型的互动" class="headerlink" title="用户的输入与3D模型的互动"></a>用户的输入与3D模型的互动</h2><p>所有的输入检测都是通过<code>QObjectPicker</code>。<code>QObjectPicker</code>的原理是跟踪图像射线的轨迹，检测出轨迹与物体的干涉（<del>？？？</del>）。算法和光线追踪相似，但是我们不需要知道被指向的物体的颜色、材质或者光线与其相交的点，我们只需要知道物体和射线相交了。</p>
+<p>在<code>QEntity</code>中添加<code>QObjectPicker</code>就可以使用一些信号了。例如<code>pressed()</code>,<code>released()</code>和<code>clicked()</code>。对于一些拖拽的事件，确保<code>dragEnabled</code>的值为<code>true</code>，然后使用<code>moved()</code>信号。</p>
+<blockquote>
+<p>所有的信号都提供了一个QPickEvent对象，这个对象使用<code>position</code>（相对屏幕）或<code>localIntersection</code>（相对模型）或<code>worldIntersection</code>（相对世界）坐标系来描述（<del>不太理解是什么意思</del>）</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/27/QT3D%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZackHu">
+      <meta itemprop="description" content="一个乱糟糟的随笔博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZackHu's Boat">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/08/27/QT3D%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/" class="post-title-link" itemprop="url">QT3D学习笔记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-08-27 10:28:34 / Modified: 16:25:04" itemprop="dateCreated datePublished" datetime="2020-08-27T10:28:34+08:00">2020-08-27</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="ECS架构"><a href="#ECS架构" class="headerlink" title="ECS架构"></a>ECS架构</h2><ul>
+<li>Entity实体:<br>实体只是一个概念上的定义，指的是存在你游戏世界中的一个独特物体，是<strong>一系列组件的集合</strong>。为了方便区分不同的实体，在代码层面上一般用一个ID来进行表示。所有组成这个实体的组件将会被这个ID标记，从而明确哪些组件属于该实体。<strong>由于其是一系列组件的集合，因此完全可以在运行时动态地为实体增加一个新的组件或是将组件从实体中移除。</strong>比如，玩家实体因为某些原因（可能陷入昏迷）而丧失了移动能力，只需简单地将移动组件从该实体身上移除，便可以达到无法移动的效果了。</li>
+<li>Component 组件<br>仅仅包含代表其特性的数据（即在组件中没有任何方法）</li>
+<li>System系统<br>其只拥有行为（即在系统中没有任何数据）</li>
+</ul>
+<h2 id="QML中的Entity类型"><a href="#QML中的Entity类型" class="headerlink" title="QML中的Entity类型"></a>QML中的Entity类型</h2><p>Entity本身是什么都没有的。需要通过<code>components</code>为其添加各种实现功能的组件。</p>
+<h2 id="QML中的Transform类型"><a href="#QML中的Transform类型" class="headerlink" title="QML中的Transform类型"></a>QML中的Transform类型</h2><p>用来表现模型的形变、旋转。<br>大概就是绕各种轴的旋转、四元数的解码、模型大小缩放之类的。</p>
+<h2 id="QML中的RenderSettings"><a href="#QML中的RenderSettings" class="headerlink" title="QML中的RenderSettings"></a>QML中的RenderSettings</h2><p><code>RenderSettings</code>类型用来储存渲染处理的设置和起作用的<code>FrameGraph</code><br><code>RenderSettings</code>组件必须在场景的<code>root entity</code>中设置。</p>
+<h3 id="关于-Render-Framegraph"><a href="#关于-Render-Framegraph" class="headerlink" title="关于 Render Framegraph"></a>关于 Render Framegraph</h3><p><code>framegraph</code>是控制相关的数据结构。和ECS结构一样，<code>framegraph</code>也是一种树结构，只不过用作于场景的渲染。在渲染帧的过程中，3D渲染器会不断的改变<code>state</code>。<code>state</code>的数量和性质不仅取决于<code>materials</code>（例如shaders,mesh geometry），也取决于我们选择的更高层次的渲染策略、计划。</p>
+<blockquote>
+<p>还有超级多介绍，以后有用到再深入介绍</p>
+</blockquote>
+<h3 id="关于inputSettings"><a href="#关于inputSettings" class="headerlink" title="关于inputSettings"></a>关于inputSettings</h3><p><code>inputSettings</code>保存了指向输入事件源(<code>input event source</code>)对象的指针。<br><code>inputSettings</code>组件必须在场景的<code>root entity</code>中设置。</p>
+<h2 id="关于Material类型"><a href="#关于Material类型" class="headerlink" title="关于Material类型"></a>关于Material类型</h2><p>不可创建的抽象材料库(<del>???黑人问好</del>)</p>
+<p>Material提供了渲染<code>entiy</code>的详细指示。<br>Material本身不会做任何事情，它只在<code>effect</code>被设置后才有用。<br>有时候一个<code>effect</code>会被多个Material使用，</p>
+<blockquote>
+<p>This allows to only create the effect, techniques, passes and shaders once while allowing to specify the material by adding Parameter instances.</p>
+</blockquote>
+<p>这段看不太明白</p>
+<p>同时Parameter储存了会被使用的参数。（有点看不懂）</p>
+<h2 id="关于Scene3D类型"><a href="#关于Scene3D类型" class="headerlink" title="关于Scene3D类型"></a>关于Scene3D类型</h2><p><code>Scene3D</code>类型用来将Qt3D的场景整合进QtQuick2场景中。<br><strong>非常有用</strong><br>3D场景就是一个<code>Entity</code>。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -695,263 +895,11 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/24/%E5%9C%A8QML%E4%B8%AD%E9%80%9A%E8%BF%87%E6%8F%92%E4%BB%B6%E4%BD%BF%E7%94%A8C++%E4%BB%A3%E7%A0%81/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZackHu">
-      <meta itemprop="description" content="一个乱糟糟的随笔博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZackHu's Boat">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/08/24/%E5%9C%A8QML%E4%B8%AD%E9%80%9A%E8%BF%87%E6%8F%92%E4%BB%B6%E4%BD%BF%E7%94%A8C++%E4%BB%A3%E7%A0%81/" class="post-title-link" itemprop="url">'在QML中通过插件使用C++代码'</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-08-24 16:48:10 / Modified: 16:51:45" itemprop="dateCreated datePublished" datetime="2020-08-24T16:48:10+08:00">2020-08-24</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="构建QT插件"><a href="#构建QT插件" class="headerlink" title="构建QT插件"></a>构建QT插件</h2><p>在<em>filedialog.pro</em>文件中：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">TEMPLATE &#x3D; lib</span><br><span class="line">CONFIG +&#x3D; qt plugin</span><br><span class="line">QT +&#x3D; qml</span><br><span class="line"></span><br><span class="line">DESTDIR +&#x3D;  ..&#x2F;imports&#x2F;FileDialog</span><br><span class="line">OBJECTS_DIR &#x3D; tmp</span><br><span class="line">MOC_DIR &#x3D; tmp</span><br><span class="line"></span><br><span class="line">TARGET &#x3D; filedialogplugin</span><br><span class="line"></span><br><span class="line">HEADERS +&#x3D; \</span><br><span class="line">        directory.h \</span><br><span class="line">        file.h \</span><br><span class="line">        dialogPlugin.h</span><br><span class="line"></span><br><span class="line">SOURCES +&#x3D; \</span><br><span class="line">        directory.cpp \</span><br><span class="line">        file.cpp \</span><br><span class="line">        dialogPlugin.cpp</span><br></pre></td></tr></table></figure>
-
-<p>我们使用了<code>lib</code>模板，并将插件工程与<code>qml</code>模组（module）连接起来作为<code>plugin</code>。最终我们应该将编译好的插件放进父类的<em>imports/FileDialog</em>目录中</p>
-<h2 id="在QML中注册类"><a href="#在QML中注册类" class="headerlink" title="在QML中注册类"></a>在QML中注册类</h2><p>在<em>dialogPlugin.h</em>文件中：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;QtQml&#x2F;QQmlExtensionPlugin&gt;</span><br><span class="line"></span><br><span class="line">class DialogPlugin : public QQmlExtensionPlugin</span><br><span class="line">  &#123;</span><br><span class="line">      Q_OBJECT</span><br><span class="line">      Q_PLUGIN_METADATA(IID &quot;org.qt-    project.QmlExtensionPlugin.FileDialog&quot;)</span><br><span class="line"></span><br><span class="line">  public:</span><br><span class="line">      &#x2F;&#x2F; registerTypes is inherited from QQmlExtensionPlugin</span><br><span class="line">      void registerTypes(const char *uri);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>在<em>DialogPlugin.cpp</em>文件中：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#include &quot;dialogPlugin.h&quot;</span><br><span class="line">#include &quot;directory.h&quot;</span><br><span class="line">#include &quot;file.h&quot;</span><br><span class="line">#include &lt;QtQml&gt;</span><br><span class="line"></span><br><span class="line">void DialogPlugin::registerTypes(const char *uri)</span><br><span class="line">&#123;</span><br><span class="line">    &#x2F;&#x2F; Register the class Directory into QML as a &quot;Directory&quot; type version 1.0</span><br><span class="line">    &#x2F;&#x2F; @uri FileDialog</span><br><span class="line">    qmlRegisterType&lt;Directory&gt;(uri, 1, 0, &quot;Directory&quot;);</span><br><span class="line">    qmlRegisterType&lt;File&gt;(uri, 1, 0, &quot;File&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><code>registerTypes()</code>函数在QML中将<code>FIle</code>与<code>Directory</code>两个类注册。<code>// @uri &lt;module identifier&gt;</code>这条注释允许Qt Creator在编辑导入这个插件的QML文件时注意到注册类型这个操作。</p>
-<h2 id="在C-类中创建QML属性："><a href="#在C-类中创建QML属性：" class="headerlink" title="在C++类中创建QML属性："></a>在C++类中创建QML属性：</h2><p>我们可以使用C++和QT的元对象系统来创建QML类型和属性。我们可以使用信号和槽来实现这些属性，并让QT意识到这些属性，最终在QML中使用这些属性。<br>对于一个文本编辑器来说，我们需要加载和保存文本文件。一般来讲，这些功能都会集成在文件系统（file dialog）中。幸运的是，QT为我们提供了Qdir,Qfile,QTextStream去实现文件路径读取与输入输出流。</p>
-<p>在<em>directory.h</em>文件中：（<em>file.h</em>文件也有对应的部分）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class Directory : public QObject &#123;</span><br><span class="line">      Q_OBJECT</span><br><span class="line"></span><br><span class="line">      Q_PROPERTY (int filesCount READ filesCount CONSTANT)</span><br><span class="line">      Q_PROPERTY (QString filename READ filename WRITE setFilename NOTIFY filenameChanged)</span><br><span class="line">      Q_PROPERTY (QString fileContent READ fileContent WRITE setFileContent NOTIFY fileContentChanged)</span><br><span class="line">      Q_PROPERTY (QQmlListProperty&lt;File&gt; files READ files CONSTANT)</span><br><span class="line">      ...</span><br></pre></td></tr></table></figure>
-
-<p><code>Directory</code>类使用元对象系统注册那些它为了实现功能而需要的属性。<code>Directory</code>类将被导出作为一个<code>Directory</code>类型的插件运用在QML中。每一个用<code>Q_PROPERTY()</code>宏中的参数都将作为属性在QML被调用。<code>Q_PROPERTY</code>将属性以及其读和写声明在元对象系统中。例如，<code>QString</code>类型的<code>filename</code>属性，可以使用<code>filename()</code>函数读取，也可以使用<code>setFilename()</code>方程改写值。同样的，有一个名为<code>filenameChanged()</code>的信号和<code>filename</code>属性连接在了一起。读写方程都在头文件中被声明为<code>public</code>了。</p>
-<p>同样的，我们也有其它根据其功能与特性而声明的属性（property），例如<code>fileCount</code>属性表明当前在路径中的文件个数，<code>filename</code>属性被设置为当前所选的文件的名称，被加载或保存的文本内容被储存在<code>fileContent</code>属性中。</p>
-<hr>
-<blockquote>
-<h5 id="关于Q-PROPERTY"><a href="#关于Q-PROPERTY" class="headerlink" title="关于Q_PROPERTY"></a>关于Q_PROPERTY</h5><p>这里补充一下<code>Q_PROPERTY</code>的声明及相关信息：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Q_PROPERTY(type name</span><br><span class="line">          (READ getFunction [WRITE setFunction] |</span><br><span class="line">         MEMBER memberName [(READ getFunction | WRITE setFunction)])</span><br><span class="line">        [RESET resetFunction]</span><br><span class="line">        [NOTIFY notifySignal]</span><br><span class="line">        [REVISION int]</span><br><span class="line">        [DESIGNABLE bool]</span><br><span class="line">        [SCRIPTABLE bool]</span><br><span class="line">        [STORED bool]</span><br><span class="line">        [USER bool]</span><br><span class="line">        [CONSTANT]</span><br><span class="line">        [FINAL])</span><br></pre></td></tr></table></figure>
-
-<p><code>Q_PROPERTY</code>是一个用来声明那些在类中继承自QObject的属性的宏。属性（Properties）表现得像类中的数据成员，但是通过元对象系统他们有了额外的特性。</p>
-<p>参数列表中的<code>type</code>,<code>name</code>和<code>READ</code>函数是强制要求有的。所有的特性<br>（attributes）都默认为<code>ture</code>除了<code>USER</code>。</p>
-<p>值得注意的是，参数列表中的的<code>[WRITE setFunction]``[READ getFunction]</code>都指向自己实现的函数</p>
-</blockquote>
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Q_PROPERTY(QQmlListProperty&lt;File&gt; files READ files CONSTANT)</span><br></pre></td></tr></table></figure>
-
-<p><code>files</code>列表属性是一个经过过滤的路径中的文件，<code>Directory</code>类是用来过滤掉目标文件夹中无效的文件,只有.txt拓展名文件是有效的。更进一步的讲，<code>QLists</code>可以通过在C++中声明为<code>QQmlListProperty</code>然后被用在QML文件中。模板对象需要继承自<code>QObject</code>，因此，<code>file</code>类也必须继承自<code>QObject</code>。在<code>Directory</code>类中，<code>File</code>对象组成的列表被储存在名为<code>m_fileList</code>的<code>QList</code>中.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">class File : public QObject&#123;</span><br><span class="line"></span><br><span class="line">      Q_OBJECT</span><br><span class="line">      Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)</span><br><span class="line">      ...</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>然后这些属性就可以作为<code>Directory</code>对象的属性的一部分而在QML中使用了。注意到我们没有在C++代码中创建声明任何有关id的属性。<br>因为QML使用Javascript的语法与结构，我们可以遍历文件列表然后找到它们的属性。例如，当我们想检索第一个文件的文件名属性时，我们可与调用<code>files[0].name</code>.<br>QML也接受常规的C++函数。文件的加载与保存函数在C++中实现并且通过使用<code>Q_INVOKABLE</code>宏定义来声明。还有一种方法时，我们将函数声明为槽，然后函数将会被QML接受。<br>在<em>directory.h</em>文件中：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Q_INVOKABLE void saveFile();</span><br><span class="line">Q_INVOKABLE void loadFile();</span><br></pre></td></tr></table></figure>
-
-<p>当路径内容被改变时，<code>Directory</code>类会提醒其它对象，这个功能是通过使用signal实现的。就像之前提到的，QML信号都有对应的在名字前加上“on”的信号处理。<code>directoryChanged</code>信号回在目录被刷新时被发射，目录通过简单的重新加载目录内容并更新有效文件的列表来刷新。QML项目可以通过<code>onDirectoryChanged</code>信号处理来进行一些事件响应。<br>list属性需要花更多功夫去处理。这是因为list属性使用了回调函数去处理列表中的内容。list属性是<code>QQmlListProperty&lt;File&gt;</code>类型的。当list被使用时，会返回一个<code>QQmlListProperty&lt;File&gt;</code>。模板类型File需要成为QObject的派生。为了创建<code>QQmlListProperty</code>，列表的访问和修改功能需要被作为一个函数指针来传递。在我们这个例子中，QList需要File指针的列表。<br><code>QQmlListProperty</code>的声明如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">QQmlListProperty (QObject *object, void *data, AppendFunction append,</span><br><span class="line">                    CountFunction count &#x3D; 0, AtFunction at &#x3D; 0, ClearFunction clear &#x3D; 0);</span><br></pre></td></tr></table></figure>
-
-<p>它包含了指向列表路径的指针，列表计数，检索项目用的指示器，和清空。其中只有append函数是强制要求有的。函数指针必须与<br>AppendFunction, CountFunction, AtFunction, or ClearFunction 的定义相匹配。<br>在我们的例子中，Directory类中构建的QQmlListProperty实例如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">QQmlListProperty&lt;File&gt;(this, &amp;m_fileList, &amp;appendFiles, &amp;filesSize, &amp;fileAt, &amp;clearFilesPtr);</span><br></pre></td></tr></table></figure>
-<p>其中各函数指针对应的函数如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">void appendFiles(QQmlListProperty&lt;File&gt; *property, File *file);</span><br><span class="line">File* fileAt(QQmlListProperty&lt;File&gt; *property, int index);</span><br><span class="line">int filesSize(QQmlListProperty&lt;File&gt; *property);</span><br><span class="line">void clearFilesPtr(QQmlListProperty&lt;File&gt; *property);</span><br></pre></td></tr></table></figure>
-
-
-<p>值得一提的是，<code>Directory</code>类使用<code>QTextStream</code>去读取和保存.txt文本</p>
-<p>现在，有了我们的<code>Directory</code>对象，我们可以检索文件列表，并且知道有多少.txt文件在目录中，以string类型得到文件名和文件内容，还可以在目录有更改的时候得到提醒。<br>现在编译我们的插件，然后我们再在QML中导入插件。</p>
-<h2 id="在QML中导入插件"><a href="#在QML中导入插件" class="headerlink" title="在QML中导入插件"></a>在QML中导入插件</h2><p><code>qmlscene</code> 工具会导入和应用同目录下的文件。我们也可以构建一个包含我们希望导入的文件的位置信息的<code>qmldir</code>文件，如果用这种方法，插件可以单独导入，而其它文件诸如QML类型、JS文件可以在<code>qmldir</code>中定义。</p>
-<p> <code>qmldir</code>文件的内容：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">module FileDialog</span><br><span class="line">plugin filedialogplugin</span><br></pre></td></tr></table></figure>
-
-<p>因为我们没有指定插件的路径，QML引擎会在和<code>qmldir</code>文件相同目录下寻找。</p>
-<p>现在我们就可以在QML中导入我们的插件了：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import FileDialog 1.0</span><br><span class="line"></span><br><span class="line">Directory &#123;</span><br><span class="line">   id: directory</span><br><span class="line">&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-
-<h2 id="将File-Dialog集成进File-Menu"><a href="#将File-Dialog集成进File-Menu" class="headerlink" title="将File Dialog集成进File Menu"></a>将File Dialog集成进File Menu</h2><p>我们的<code>FileMenu</code>需要显示<code>FileDialog</code>的对象，同时响应诸如保存、加载文件、编辑文本等功能。</p>
-<p><code>Directory</code>对象在<em>FileMenu.qml</em>文件中提醒<code>FileDialog</code>对象目录内容刷新了，这个提醒功能在信号处理<code>onDirectoryChanged</code>中实现。</p>
-<p>在<em>FileMenu.qml</em>中：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Directory &#123;</span><br><span class="line">      id: directory</span><br><span class="line">      filename: textInput.text</span><br><span class="line">      onDirectoryChanged: fileDialog.notifyRefresh()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在<em>FileDialog.qml</em>中：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">signal notifyRefresh()</span><br><span class="line">onNotifyRefresh: dirView.model &#x3D; directory.files</span><br></pre></td></tr></table></figure>
-
-<p><code>FileDialog</code>对象通过读取列表的<code>files</code>属性来更新目录内容。<code>files</code>被<code>GridView</code>对象拿来用作模型（model），根据授权（delegate）以网格形式显示数据项目。授权（delegate）将简单的创建一个文字在中央的网格作为模型和文件路径的外观。点击文件名会使矩形出现来高亮文件名。</p>
-<p>在<em>FileMenu.qml</em>中：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">Button &#123;</span><br><span class="line">      id: newButton</span><br><span class="line">      label: &quot;New&quot;</span><br><span class="line">      onButtonClick: &#123;</span><br><span class="line">          textArea.textContent &#x3D; &quot;&quot;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  Button &#123;</span><br><span class="line">      id: loadButton</span><br><span class="line">      label: &quot;Load&quot;</span><br><span class="line">      onButtonClick: &#123;</span><br><span class="line">          directory.filename &#x3D; textInput.text</span><br><span class="line">          directory.loadFile()</span><br><span class="line">          textArea.textContent &#x3D; directory.fileContent</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  Button &#123;</span><br><span class="line">      id: saveButton</span><br><span class="line">      label: &quot;Save&quot;</span><br><span class="line">      onButtonClick: &#123;</span><br><span class="line">          directory.fileContent &#x3D; textArea.textContent</span><br><span class="line">          directory.filename &#x3D; textInput.text</span><br><span class="line">          directory.saveFile()</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  Button &#123;</span><br><span class="line">      id: exitButton</span><br><span class="line">      label: &quot;Exit&quot;</span><br><span class="line">      onButtonClick: &#123;</span><br><span class="line">          Qt.quit()</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-<p>现在，我们的文本编辑器以及基本完成了。额外的<code>EditMenu</code>按钮与<code>TextEdit</code>函数连接在了一起，用来复制、粘贴和全选文本。</p>
-<p>最后，如果通过<code>qmlscene</code>运行该文本编辑器，需要导入插件路径：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">qmlscene -I .&#x2F;imports texteditor.qml</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/24/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZackHu">
-      <meta itemprop="description" content="一个乱糟糟的随笔博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZackHu's Boat">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/08/24/hello-world/" class="post-title-link" itemprop="url">测试更改markdown文件名替换已渲染文件</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-08-24 09:48:06 / Modified: 09:10:50" itemprop="dateCreated datePublished" datetime="2020-08-24T09:48:06+08:00">2020-08-24</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="测试更改markdown文件名替换已渲染文件"><a href="#测试更改markdown文件名替换已渲染文件" class="headerlink" title="测试更改markdown文件名替换已渲染文件"></a>测试更改markdown文件名替换已渲染文件</h1><p><del>这是打字超容易打错的人修改了好几遍的一条测试信息</del></p>
-<p><del>这是删除线</del></p>
-<p>如果正常将会替换掉hollowWord文章</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/22/%E6%B5%8B%E8%AF%95github%E4%BD%9C%E4%B8%BA%E5%9B%BE%E5%BA%8A/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZackHu">
-      <meta itemprop="description" content="一个乱糟糟的随笔博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZackHu's Boat">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/08/22/%E6%B5%8B%E8%AF%95github%E4%BD%9C%E4%B8%BA%E5%9B%BE%E5%BA%8A/" class="post-title-link" itemprop="url">测试github作为图床</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-08-22 17:48:06" itemprop="dateCreated datePublished" datetime="2020-08-22T17:48:06+08:00">2020-08-22</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-08-25 17:29:48" itemprop="dateModified" datetime="2020-08-25T17:29:48+08:00">2020-08-25</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="来点好看的二刺螈图片"><a href="#来点好看的二刺螈图片" class="headerlink" title="来点好看的二刺螈图片"></a>来点好看的二刺螈图片</h1><img src="/2020/08/22/%E6%B5%8B%E8%AF%95github%E4%BD%9C%E4%B8%BA%E5%9B%BE%E5%BA%8A/73368669_p0.jpg" width="50%">
-
-<img src="/2020/08/22/%E6%B5%8B%E8%AF%95github%E4%BD%9C%E4%B8%BA%E5%9B%BE%E5%BA%8A/74805730_p0.jpg" width="50%">
-
-<img src="/2020/08/22/%E6%B5%8B%E8%AF%95github%E4%BD%9C%E4%B8%BA%E5%9B%BE%E5%BA%8A/20200825_2.jpg" width="50%">
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
 
 
 
